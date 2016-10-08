@@ -1,47 +1,42 @@
 <!DOCTYPE html>
 <html lang="fr">
-
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 <head>
     <title>M3T</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
     <link rel="stylesheet" href="images-grid.css" type="text/css" media="screen" />
 </head>
 
 <body ng-app="app" ng-controller="MainCtrl as $ctrl">
 
-    <section class="control-container container">
-        <h1>Cartes M3T</h1>
-
-        <div class="alert text-center">
-
-            <div class="row">
-                <div class="col-xs-12">
-                    <a class="btn btn-lg btn-density" ng-click="$ctrl.toggleTag('density')" ng-class="{ 'active': $ctrl.activeTags.indexOf('density') !== -1}">
-                        Densit&eacute;
-                    </a>
-                    <a class="btn btn-lg btn-environment" ng-click="$ctrl.toggleTag('environment')" ng-class="{ 'active': $ctrl.activeTags.indexOf('environment') !== -1}">
-                        Environnement
-                    </a>
-                    <a class="btn btn-lg btn-alternatives" ng-click="$ctrl.toggleTag('alternatives')" ng-class="{ 'active': $ctrl.activeTags.indexOf('alternatives') !== -1}">
-                        Trajets alternatifs
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
+    <div class="control-container alert text-center">
+        <a ng-repeat="tag in $ctrl.tags" class="btn btn-lg" ng-click="$ctrl.toggleTag(tag.id)" ng-class="[{'active': $ctrl.activeTags.indexOf(tag.id) !== -1}, 'btn-' +  tag.id]">
+            {{ tag.label }} ({{ $ctrl.countMapsByTag(tag.id) }})
+        </a>
+    </div>
     <div class="photos-container">
-        <div class="row">
-            <div class="col-xs-4 photo-container-col" ng-repeat="map in $ctrl.maps" ng-hide="map.hide">
-                <a class="photo-container" ng-href="{{ $ctrl.getMapLink(map) }}" target="_blank">
-                    <img ng-src="{{ map.imageUrl }}" alt="">
-                    <h3 class="title">{{ map.title }}</h3>
-                    <p class="extra-links"><a ng-if="map.forumUrl" ng-href="{{ map.forumUrl }}" target="_blank">forum</a></p>
-                </a>
+        <div class="photo-container" ng-repeat="map in $ctrl.maps" ng-hide="map.hide" ng-click="$ctrl.selectedMap = map">
+            <div class="map-tags">
+                <div ng-repeat="tag in map.tags" class="tag" ng-class="'tag-' + tag">&nbsp;</div>
             </div>
+            <img ng-src="{{ map.imageUrl }}" alt="">
+            <h3 class="title">{{ map.title }}</h3>
         </div>
     </div>
+    <div class="selected-map" ng-show="$ctrl.selectedMap" ng-click="$ctrl.selectedMap = undefined">
+        <!-- <h3 class="title">{{ $ctrl.selectedMap.title }}</h3> -->
+        <img ng-src="{{ $ctrl.selectedMap.imageUrl }}" alt="">
+        <div class="extra-links">
+            <a ng-if="$ctrl.selectedMap.flickrUrl" ng-href="{{ $ctrl.selectedMap.flickrUrl }}" target="_blank"><i class="fa fa-flickr" aria-hidden="true"></i> flickr</a>
+            <a ng-if="$ctrl.selectedMap.forumUrl" ng-href="{{ $ctrl.selectedMap.forumUrl }}" target="_blank"><i class="fa fa-forumbee" aria-hidden="true"></i> forum</a>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular-animate.min.js"></script>
+
     <script type="text/javascript" src='images-grid.js'></script>
 </body>
 

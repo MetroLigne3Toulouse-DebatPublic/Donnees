@@ -1,38 +1,53 @@
 (function () {
     'use strict';
 
-    console.log('tes1t')
     angular
         .module('app', ['ngAnimate'])
         .controller('MainCtrl', MainCtrl);
 
-    function MainCtrl() {
+    function MainCtrl($http) {
         var $ctrl = this;
 
-        $ctrl.activeTags = ['density', 'environment', 'alternatives'];
+        $ctrl.openAllTooltips = true;
 
-        $ctrl.maps = [{
-            imageUrl: 'https://c8.staticflickr.com/6/5473/29358613943_57a8334b1b_b.jpg',
-            flickrUrl: 'https://www.flickr.com/photos/cndpdebatpublic/29358613943/',
-            forumUrl: 'https://forum.metroligne3toulouse.fr/t/carte-densite-de-population-par-categorie-socio-professionnelle/72/2',
-            title: 'Carte densit\u00e9 de population par cat\u00e9gorie socio-professionnelle',
-            tags: ['density']
+        $ctrl.maps = [];
+
+        $ctrl.tags = [{
+            id: 'transport',
+            label: 'Transport/mobilité'
         }, {
-            imageUrl: 'https://c7.staticflickr.com/6/5150/29691369750_61bc49292d_b.jpg',
-            flickrUrl: 'https://www.flickr.com/photos/cndpdebatpublic/29691369750/',
-            forumUrl: 'https://forum.metroligne3toulouse.fr/t/carte-densite-de-population-par-tranche-d-age/71/2',
-            title: 'Carte densit\u00e9 de population par tranche d\'\u00e2ge',
-            tags: ['density']
+            id: 'urbanisme',
+            label: 'Urbanisme/socio-économie'
         }, {
-            imageUrl: './cartes/en-cours-realisation.png',
-            title: 'Itin\u00e9raire alternatif X',
-            tags: ['alternatives']
+            id: 'environnement',
+            label: 'Environnement, paysage et patrimoine'
         }, {
-            imageUrl: './cartes/en-cours-realisation.png',
-            title: 'Carte de pollution atmosph\u00e9rique',
-            forumUrl: 'https://forum.metroligne3toulouse.fr/t/carte-de-pollution-atmospherique/77',
-            tags: ['environment']
+            id: 'propositions',
+            label: 'Propositions du public'
         }];
+
+        $ctrl.activeTags = $ctrl.tags.reduce(function (activeTags, tag) {
+            activeTags.push(tag.id);
+            return activeTags;
+        }, []);
+
+        // load maps from json file
+        $http.get('maps.json').success(function (maps) {
+            $ctrl.maps = maps;
+        });
+
+        $ctrl.isSelected = function (map) {
+            return angular.isDefined($ctrl.selectedMap) && $ctrl.selectedMap.imageUrl === map.imageUrl;
+        }
+
+        $ctrl.countMapsByTag = function (tag) {
+            return $ctrl.maps.reduce(function (count, map) {
+                if (map.tags.indexOf(tag) !== -1) {
+                    count++;
+                }
+                return count;
+            }, 0);
+        }
 
         $ctrl.activeMaps = angular.copy($ctrl.maps);
 
