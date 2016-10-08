@@ -3,7 +3,7 @@ body {
 }
 
 .control-container {
-    paddin: 20px;
+    padding: 20px;
     transition-property: all;
     transition-duration: 2.5s;
     /* on aurait pu écrire 500ms également */
@@ -13,53 +13,56 @@ body {
 
 @keyframes appear {
     0% {
-        opacity: 0.5;
+        opacity: 0.3;
         position: absolute;
         top: 1000px;
         left: -1000px;
+        transform: scale(0.2) rotate(30deg);
     }
     10% {
         opacity: 0.8;
         position: absolute;
-        top: 100px;
-        left: -100px;
+        transform: scale(0.5) rotate(30deg);
+    }
+    50% {
+        transform: scale(0.2) rotate(30deg);
     }
     100% {
         opacity: 1;
         position: relative;
         top: 0px;
         left: 0px;
+        transform: scale(1) rotate(0deg);
     }
 }
 
 @keyframes disappear {
     0% {
         opacity: 1;
-        position: absolute;
-        top: 0px;
-        left: 0px;
+        position: relative;
     }
     50% {
-        opacity: 0.8;
-        position: absolute;
-        top: -100px;
-        left: 100px;
+        opacity: 0.5;
     }
     100% {
         opacity: 0;
-        top: -300px;
-        left: 2000px;
-        -moz-transform: scale(0.2);
-        -webkit-transform: scale(0.2);
-        transform: scale(0.2);
+        transform: scale(0.2) rotateX(90deg);
     }
 }
 
-.photo-container-col {
+.photo-container {
     animation: 0.5s appear;
+    float: left;
+    max-width: 20%;
+    padding: 10px;
+    position: relative;
 }
 
-.photo-container-col.ng-hide {
+.photo-container img {
+    height: 200px;
+}
+
+.photo-container.ng-hide {
     animation: 0.5s disappear;
 }
 
@@ -73,55 +76,62 @@ body {
     background-color: #777;
     border-color: #333;
     font-weight: bold;
+    margin: 0 5px;
+    font-size: 12px;
 }
 
 .control-container a:hover, .control-container a.active {
     color: white;
 }
 
-.control-container a.btn-density.active {
+.map-tags{
+    position: absolute;
+    top: -5px;
+    z-index: 100;
+    opacity: 0.6;
+}
+
+.map-tags .tag{
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 5px;
+}
+
+.control-container a.btn-transport.active {
     background-color: #206bab;
     border-color: #0057a2;
 }
+.map-tags .tag-transport{
+    background-color: #206bab;
+}
 
+.control-container a.btn-urbanisme.active {
+    background-color: #ca0ee2;
+    border-color: #6a1075;
+}
+.map-tags .tag-urbanisme{
+    background-color: #ca0ee2;
+}
 
-/*.control-container a.btn-density:hover{
-    background-color: #3280c2;
-    border-color: #0057a2;
-}*/
-
-.control-container a.btn-environment.active {
+.control-container a.btn-environnement.active {
     background-color: #58b42e;
     border-color: #2b7c05;
 }
+.map-tags .tag-environnement{
+    background-color: #58b42e;
+}
 
-
-/*.control-container a.btn-environment:hover{
-    background-color: #83cc61;
-    border-color: #2b7c05;
-}*/
-
-.control-container a.btn-alternatives.active {
+.control-container a.btn-propositions.active {
     background-color: #e24d0e;
     border-color: #b03400;
 }
-
-
-/*.control-container a.btn-alternatives:hover{
-    background-color: #df5c25;
-    border-color: #b03400;
-}*/
+.map-tags .tag-propositions{
+    background-color: #e24d0e;
+}
 
 .photos-container {
     padding: 20px 50px;
-}
-
-.photos-container .extra-links{
-    text-align: center;
-}
-.photos-container .extra-links a{
-    text-decoration: none;
-    color: #555;
 }
 
 .photos-container .photo-container {
@@ -143,9 +153,7 @@ body {
 
 .photos-container .photo-container:hover {
     opacity: 1 !important;
-    transition: opacity 250ms ease 0s;
-    -moz-transform: scale(1.1);
-    -webkit-transform: scale(1.1);
+    transition: all 250ms ease-in;
     transform: scale(1.1);
     z-index: 10;
 }
@@ -156,4 +164,38 @@ body {
     font-size: 16px;
     margin-top: 5px;
     margin-bottom: 20px;
+    height: 27px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 12px;
+	/*white-space: nowrap;*/
+    padding: 0 0 5px 0;
+}
+
+.selected-map{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0px;
+    text-align: center;
+    z-index: 20;
+    background: rgba(0,0,0, 0.85);
+}
+.selected-map .title{
+    color: #eee;
+}
+.selected-map img{
+    margin-top: 2%;
+     height: 80%;
+     width: auto;
+     z-index: 20;
+}
+.selected-map .extra-links {
+    text-align: center;
+}
+
+.selected-map .extra-links a {
+    text-decoration: none;
+    font-size: 40px;
+    padding: 5px 30px;
 }
