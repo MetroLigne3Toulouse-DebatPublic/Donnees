@@ -1,9 +1,10 @@
 body {
-    background: black;
+    background: white;
 }
 
 .control-container {
-    padding: 20px;
+    margin: 10px;
+    padding: 0px;
     transition-property: all;
     transition-duration: 2.5s;
     /* on aurait pu écrire 500ms également */
@@ -50,22 +51,6 @@ body {
     }
 }
 
-.photo-container {
-    animation: 0.5s appear;
-    float: left;
-    max-width: 20%;
-    padding: 10px;
-    position: relative;
-}
-
-.photo-container img {
-    height: 200px;
-}
-
-.photo-container.ng-hide {
-    animation: 0.5s disappear;
-}
-
 .control-container h1 {
     text-align: center;
     color: #ddd;
@@ -84,14 +69,14 @@ body {
     color: white;
 }
 
-.map-tags{
-    position: absolute;
-    top: -5px;
-    z-index: 15;
+.map-tags {
     opacity: 0.6;
+    margin-right: 5px;
+    margin-left: 0;
+    padding: 0;
 }
 
-.map-tags .tag{
+.map-tags .tag {
     display: inline-block;
     width: 12px;
     height: 12px;
@@ -102,7 +87,8 @@ body {
     background-color: #206bab;
     border-color: #0057a2;
 }
-.map-tags .tag-transport{
+
+.map-tags .tag-transport {
     background-color: #206bab;
 }
 
@@ -110,7 +96,8 @@ body {
     background-color: #ca0ee2;
     border-color: #6a1075;
 }
-.map-tags .tag-urbanisme{
+
+.map-tags .tag-urbanisme {
     background-color: #ca0ee2;
 }
 
@@ -118,7 +105,8 @@ body {
     background-color: #58b42e;
     border-color: #2b7c05;
 }
-.map-tags .tag-environnement{
+
+.map-tags .tag-environnement {
     background-color: #58b42e;
 }
 
@@ -126,23 +114,39 @@ body {
     background-color: #e24d0e;
     border-color: #b03400;
 }
-.map-tags .tag-propositions{
+
+.map-tags .tag-propositions {
     background-color: #e24d0e;
 }
 
 .photos-container {
-    padding: 20px 50px;
+    margin: 10px 20px;
+    padding: 0;
+    text-align: center;
 }
 
 .photos-container .photo-container {
-    display: block;
+    display: inline-block;
     text-decoration: none;
+    width: 230px;
+    height: 200px;
+    animation: 0.5s appear;
+    padding: 10px;
+    margin: 0;
+    position: relative;
+    text-align: center;
+}
+
+.photos-container .photo-container.ng-hide {
+    animation: 0.5s disappear;
 }
 
 .photos-container .photo-container img {
     border: 1px solid rgba(255, 255, 255, 0.2);
     box-shadow: 0px 0px 7px rgba(255, 255, 255, 0.24);
     max-width: 100%;
+    max-height: 80%;
+    max-height: calc(100% - 30px);
     border-radius: 5px;
     -moz-transition: all 0.3s;
     -webkit-transition: all 0.3s;
@@ -159,8 +163,8 @@ body {
 }
 
 .photos-container .photo-container .title {
-    text-align: center;
-    color: #aaa;
+    text-align: left;
+    color: #555;
     font-size: 16px;
     margin-top: 5px;
     margin-bottom: 20px;
@@ -168,28 +172,31 @@ body {
     overflow: hidden;
     text-overflow: ellipsis;
     font-size: 12px;
-	/*white-space: nowrap;*/
-    padding: 0 0 5px 0;
+    /*white-space: nowrap;*/
+    padding: 0 0 3px 0;
 }
 
-.selected-map{
+.selected-map {
     width: 100%;
     height: 100%;
     position: fixed;
     top: 0px;
     text-align: center;
     z-index: 20;
-    background: rgba(0,0,0, 0.85);
+    background: rgba(0, 0, 0, 0.85);
 }
-.selected-map .title{
+
+.selected-map .title {
     color: #eee;
 }
-.selected-map img{
+
+.selected-map img {
     margin-top: 2%;
-     height: 80%;
-     width: auto;
-     z-index: 20;
+    height: 80%;
+    width: auto;
+    z-index: 20;
 }
+
 .selected-map .extra-links {
     text-align: center;
 }

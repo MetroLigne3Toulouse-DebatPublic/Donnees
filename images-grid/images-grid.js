@@ -33,6 +33,14 @@
 
         // load maps from json file
         $http.get('maps.json').success(function (maps) {
+            var offlineDev = false;
+            if (offlineDev) {
+                // offline dev mode: use local image only
+                maps = maps.map(function (map) {
+                    map.imageUrl = './cartes/en-cours-realisation.png'
+                    return map;
+                });
+            }
             $ctrl.maps = maps;
         });
 
