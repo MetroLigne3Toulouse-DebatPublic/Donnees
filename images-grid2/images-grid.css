@@ -1,0 +1,208 @@
+body {
+    background: white;
+}
+
+.control-container {
+    margin: 10px;
+    padding: 0px;
+    transition-property: all;
+    transition-duration: 2.5s;
+    /* on aurait pu écrire 500ms également */
+    transition-timing-function: ease-in;
+    transition-delay: 1s;
+}
+
+@keyframes appear {
+    0% {
+        opacity: 0.3;
+        position: absolute;
+        top: 1000px;
+        left: -1000px;
+        transform: scale(0.2) rotate(30deg);
+    }
+    10% {
+        opacity: 0.8;
+        position: absolute;
+        transform: scale(0.5) rotate(30deg);
+    }
+    50% {
+        transform: scale(0.2) rotate(30deg);
+    }
+    100% {
+        opacity: 1;
+        position: relative;
+        top: 0px;
+        left: 0px;
+        transform: scale(1) rotate(0deg);
+    }
+}
+
+@keyframes disappear {
+    0% {
+        opacity: 1;
+        position: relative;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0.2) rotateX(90deg);
+    }
+}
+
+.control-container h1 {
+    text-align: center;
+    color: #ddd;
+}
+
+.control-container a {
+    color: #ddd;
+    background-color: #777;
+    border-color: #333;
+    font-weight: bold;
+    margin: 0 5px;
+    font-size: 12px;
+}
+
+.control-container a:hover, .control-container a.active {
+    color: white;
+}
+
+.map-tags {
+    opacity: 0.6;
+    margin-right: 5px;
+    margin-left: 0;
+    padding: 0;
+}
+
+.map-tags .tag {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 5px;
+}
+
+.control-container a.btn-transport.active {
+    background-color: #206bab;
+    border-color: #0057a2;
+}
+
+.map-tags .tag-transport {
+    background-color: #206bab;
+}
+
+.control-container a.btn-urbanisme.active {
+    background-color: #ca0ee2;
+    border-color: #6a1075;
+}
+
+.map-tags .tag-urbanisme {
+    background-color: #ca0ee2;
+}
+
+.control-container a.btn-environnement.active {
+    background-color: #58b42e;
+    border-color: #2b7c05;
+}
+
+.map-tags .tag-environnement {
+    background-color: #58b42e;
+}
+
+.control-container a.btn-propositions.active {
+    background-color: #e24d0e;
+    border-color: #b03400;
+}
+
+.map-tags .tag-propositions {
+    background-color: #e24d0e;
+}
+
+.photos-container {
+    margin: 10px 20px;
+    padding: 0;
+    text-align: center;
+}
+
+.photos-container .photo-container {
+    display: inline-block;
+    text-decoration: none;
+    width: 230px;
+    height: 200px;
+    animation: 0.5s appear;
+    padding: 10px;
+    margin: 0;
+    position: relative;
+    text-align: center;
+}
+
+.photos-container .photo-container.ng-hide {
+    animation: 0.5s disappear;
+}
+
+.photos-container .photo-container img {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0px 0px 7px rgba(255, 255, 255, 0.24);
+    max-width: 100%;
+    max-height: 80%;
+    max-height: calc(100% - 30px);
+    border-radius: 5px;
+    -moz-transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    opacity: 0.8 !important;
+    cursor: pointer;
+}
+
+.photos-container .photo-container:hover {
+    opacity: 1 !important;
+    transition: all 250ms ease-in;
+    transform: scale(1.1);
+    z-index: 10;
+}
+
+.photos-container .photo-container .title {
+    text-align: left;
+    color: #555;
+    font-size: 16px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    height: 27px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 12px;
+    /*white-space: nowrap;*/
+    padding: 0 0 3px 0;
+}
+
+.selected-map {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0px;
+    text-align: center;
+    z-index: 20;
+    background: rgba(0, 0, 0, 0.85);
+}
+
+.selected-map .title {
+    color: #eee;
+}
+
+.selected-map img {
+    margin-top: 2%;
+    height: 80%;
+    width: auto;
+    z-index: 20;
+}
+
+.selected-map .extra-links {
+    text-align: center;
+}
+
+.selected-map .extra-links a {
+    text-decoration: none;
+    font-size: 40px;
+    padding: 5px 30px;
+}

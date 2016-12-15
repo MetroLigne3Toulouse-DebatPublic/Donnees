@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<head>
+    <title>M3T</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="images-grid.css?v=2" type="text/css" media="screen" />
+</head>
+
+<body ng-app="app" ng-controller="MainCtrl as $ctrl">
+
+    <div class="control-container alert text-center">
+        <a ng-repeat="tag in $ctrl.tags" class="btn btn-lg" ng-click="$ctrl.toggleTag(tag.id)" ng-class="[{'active': $ctrl.activeTags.indexOf(tag.id) !== -1}, 'btn-' +  tag.id]">
+            {{ tag.label }} ({{ $ctrl.countMapsByTag(tag.id) }})
+        </a>
+    </div>
+    <div class="photos-container">
+        <div class="photo-container" ng-repeat="map in $ctrl.maps" ng-hide="map.hide" ng-click="$ctrl.selectedMap = map">
+            <img ng-src="{{ map.imageUrl }}" alt="">
+            <h3 class="title">
+                <span class="map-tags">
+                    <span ng-repeat="tag in map.tags" class="tag" ng-class="'tag-' + tag">&nbsp;</span>
+                </span>
+                {{ map.title }}
+            </h3>
+        </div>
+    </div>
+    <div class="selected-map" ng-show="$ctrl.selectedMap" ng-click="$ctrl.selectedMap = undefined">
+        <!-- <h3 class="title">{{ $ctrl.selectedMap.title }}</h3> -->
+        <img ng-src="{{ $ctrl.selectedMap.imageUrl }}" alt="">
+        <div class="extra-links">
+            <a ng-if="$ctrl.selectedMap.flickrUrl" ng-href="{{ $ctrl.selectedMap.flickrUrl }}" target="_blank"><i class="fa fa-flickr" aria-hidden="true"></i> flickr</a>
+            <a ng-if="$ctrl.selectedMap.forumUrl" ng-href="{{ $ctrl.selectedMap.forumUrl }}" target="_blank"><i class="fa fa-forumbee" aria-hidden="true"></i> forum</a>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular-animate.min.js"></script>
+
+    <script type="text/javascript" src='images-grid.js?v=2'></script>
+</body>
+
+</html>
