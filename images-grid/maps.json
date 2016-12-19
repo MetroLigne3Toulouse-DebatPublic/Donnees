@@ -253,4 +253,9 @@
     "forumUrl": "https://framacarte.org/fr/map/carte-atelier-carto-colomiers-propositions-du-publ_6084",
     "title": "Atelier de Colomiers 10/11 - Propositions du public",
     "tags": ["propositions"]
+}, {
+    "imageUrl": "cartes/Carte-dynamique-IdGeo.png",
+    "forumUrl": "http://idgeo.fr/cndp/geojson/carte_questions_generales.html",
+    "title": "Restitution thématique des avis et questions reçus sur le site du débat",
+    "tags": ["propositions"]
 }]
