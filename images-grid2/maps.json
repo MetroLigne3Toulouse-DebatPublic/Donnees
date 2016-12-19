@@ -108,4 +108,9 @@
     "forumUrl": "https://framacarte.org/fr/map/carte-des-enjeux-locaux_5330",
     "title": "Carte des enjeux locaux",
     "tags": ["propositions"]
+}, {
+    "imageUrl": "cartes/Carte-dynamique-IdGeo.png",
+    "forumUrl": "http://idgeo.fr/cndp/geojson/carte_questions_generales.html",
+    "title": "Restitution thématique des avis et questions reçus sur le site du débat",
+    "tags": ["propositions"]
 }]
