@@ -154,21 +154,19 @@
     "title": "Zones d'accueil existantes à proximité des futures stations - secteur Colomiers",
     "tags": ["transport"]
 }, {
-    "imageUrl": "https://c8.staticflickr.com/6/5473/29358613943_57a8334b1b_b.jpg",
-    "flickrUrl": "https://www.flickr.com/photos/cndpdebatpublic/29358613943/",
-    "forumUrl": "https://forum.metroligne3toulouse.fr/t/carte-densite-de-population-par-categorie-socio-professionnelle/72/2",
+    "imageUrl": "cartes/5-Densite-Age.png",
+    "forumUrl": "http://public.cyril.romain.free.fr/M3T/toulouse_population_age.html",
+    "title": "Densité de population par tranche d'âge",
+    "tags": ["urbanisme"]
+}, {
+    "imageUrl": "cartes/6-Densite-CSP.png",
+    "forumUrl": "http://public.cyril.romain.free.fr/M3T/toulouse_population_pro.html",
     "title": "Densité de population par catégorie socio-professionnelle",
     "tags": ["urbanisme"]
 }, {
     "imageUrl": "https://c2.staticflickr.com/6/5817/30204359713_007140bd29_k.jpg",
     "flickrUrl": "https://www.flickr.com/photos/cndpdebatpublic/30204359713/in/dateposted-public/",
     "title": "Desserte des quartiers prioritaires par les transports en commun",
-    "tags": ["urbanisme"]
-}, {
-    "imageUrl": "https://c7.staticflickr.com/6/5150/29691369750_61bc49292d_b.jpg",
-    "flickrUrl": "https://www.flickr.com/photos/cndpdebatpublic/29691369750/",
-    "forumUrl": "https://forum.metroligne3toulouse.fr/t/carte-densite-de-population-par-tranche-d-age/71/2",
-    "title": "Densité de population par tranche d'âge",
     "tags": ["urbanisme"]
 }, {
     "imageUrl": "https://c1.staticflickr.com/6/5080/29509697544_26f72be829_k.jpg",
