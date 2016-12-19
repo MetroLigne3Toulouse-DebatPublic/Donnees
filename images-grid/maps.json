@@ -230,19 +230,27 @@
     "tags": ["environnement"]
 }, {
     "imageUrl": "https://c6.staticflickr.com/6/5829/30204489213_6fdba7c759_z.jpg",
-    "flickrUrl": "https://www.flickr.com/photos/cndpdebatpublic/30204489213/in/dateposted-public/",
+    "flickrUrl": "https://www.flickr.com/photos/cndpdebatpublic/30204489213/in/album-72157671115018063/",
     "title": "Inventaire des zones ZICO et ZNIEFF de Toulouse et sa banlieue",
     "tags": ["environnement"]
 }, {
-    "imageUrl": "https://c7.staticflickr.com/9/8410/30310932982_195c8965bd_z.jpg",
-    "flickrUrl": "https://www.flickr.com/photos/cndpdebatpublic/30310932982/in/album-72157671115018063/",
-    "forumUrl": "https://framacarte.org/fr/map/carte-atelier-carto-labege-propositions-du-public_5322#13/43.5631/1.5029",
+    "imageUrl": "cartes/Capture-Enjeux-locaux.png",
+    "forumUrl": "https://framacarte.org/fr/map/carte-des-enjeux-locaux_5330",
+    "title": "Carte des enjeux locaux",
+    "tags": ["propositions"]
+}, {
+    "imageUrl": "cartes/Capture-Atelier-Labege.png",
+    "forumUrl": "https://framacarte.org/fr/map/carte-atelier-carto-labege-propositions-du-public_5322",
     "title": "Atelier de Labège 12/10 - Propositions du public",
     "tags": ["propositions"]
 }, {
-    "imageUrl": "https://c5.staticflickr.com/6/5579/30723722052_c8c2ae4ab4_h.jpg",
-    "flickrUrl": "https://www.flickr.com/photos/cndpdebatpublic/30723722052/in/dateposted-public/",
-    "forumUrl": "https://framacarte.org/fr/map/carte-atelier-carto-minimes-propositions-du-public_5797#13/43.6343/1.4667",
+    "imageUrl": "cartes/Capture-Atelier-Minimes.png",
+    "forumUrl": "https://framacarte.org/fr/map/carte-atelier-carto-minimes-propositions-du-public_5797",
     "title": "Atelier des Minimes 27/10 - Propositions du public",
+    "tags": ["propositions"]
+}, {
+    "imageUrl": "cartes/Capture-Atelier-Colomiers.png",
+    "forumUrl": "https://framacarte.org/fr/map/carte-atelier-carto-colomiers-propositions-du-publ_6084",
+    "title": "Atelier de Colomiers 10/11 - Propositions du public",
     "tags": ["propositions"]
 }]
