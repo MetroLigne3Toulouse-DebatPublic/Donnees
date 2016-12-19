@@ -44,9 +44,13 @@
     "title": "Zones d'accueil existantes à proximité des futures stations - secteur Colomiers",
     "tags": ["transport"]
 }, {
-    "imageUrl": "https://c8.staticflickr.com/6/5473/29358613943_57a8334b1b_b.jpg",
-    "flickrUrl": "https://www.flickr.com/photos/cndpdebatpublic/29358613943/",
-    "forumUrl": "https://forum.metroligne3toulouse.fr/t/carte-densite-de-population-par-categorie-socio-professionnelle/72/2",
+    "imageUrl": "cartes/5-Densite-Age.png",
+    "forumUrl": "http://public.cyril.romain.free.fr/M3T/toulouse_population_age.html",
+    "title": "Densité de population par tranche d'âge",
+    "tags": ["urbanisme"]
+}, {
+    "imageUrl": "cartes/6-Densite-CSP.png",
+    "forumUrl": "http://public.cyril.romain.free.fr/M3T/toulouse_population_pro.html",
     "title": "Densité de population par catégorie socio-professionnelle",
     "tags": ["urbanisme"]
 }, {
