@@ -20,7 +20,7 @@
     "tags": ["transport"]
 }, {
     "imageUrl": "cartes/4-EMD.png",
-    "forumUrl": "http://public.cyril.romain.free.fr/M3T/toulouse_population-flux-emd_travail.html",
+    "dynamicMapUrl": "http://public.cyril.romain.free.fr/M3T/toulouse_population-flux-emd_travail.html",
     "title": "Flux de mobilité tous modes (enquête ménages déplacements)",
     "tags": ["transport"]
 }, {
@@ -155,12 +155,12 @@
     "tags": ["transport"]
 }, {
     "imageUrl": "cartes/5-Densite-Age.png",
-    "forumUrl": "http://public.cyril.romain.free.fr/M3T/toulouse_population_age.html",
+    "dynamicMapUrl": "http://public.cyril.romain.free.fr/M3T/toulouse_population_age.html",
     "title": "Densité de population par tranche d'âge",
     "tags": ["urbanisme"]
 }, {
     "imageUrl": "cartes/6-Densite-CSP.png",
-    "forumUrl": "http://public.cyril.romain.free.fr/M3T/toulouse_population_pro.html",
+    "dynamicMapUrl": "http://public.cyril.romain.free.fr/M3T/toulouse_population_pro.html",
     "title": "Densité de population par catégorie socio-professionnelle",
     "tags": ["urbanisme"]
 }, {
@@ -235,27 +235,27 @@
     "tags": ["environnement"]
 }, {
     "imageUrl": "cartes/Capture-Enjeux-locaux.PNG",
-    "forumUrl": "https://framacarte.org/fr/map/carte-des-enjeux-locaux_5330",
+    "dynamicMapUrl": "https://framacarte.org/fr/map/carte-des-enjeux-locaux_5330",
     "title": "Carte des enjeux locaux",
     "tags": ["propositions"]
 }, {
     "imageUrl": "cartes/Capture-Atelier-Labege.PNG",
-    "forumUrl": "https://framacarte.org/fr/map/carte-atelier-carto-labege-propositions-du-public_5322",
+    "dynamicMapUrl": "https://framacarte.org/fr/map/carte-atelier-carto-labege-propositions-du-public_5322",
     "title": "Atelier de Labège 12/10 - Propositions du public",
     "tags": ["propositions"]
 }, {
     "imageUrl": "cartes/Capture-Atelier-Minimes.PNG",
-    "forumUrl": "https://framacarte.org/fr/map/carte-atelier-carto-minimes-propositions-du-public_5797",
+    "dynamicMapUrl": "https://framacarte.org/fr/map/carte-atelier-carto-minimes-propositions-du-public_5797",
     "title": "Atelier des Minimes 27/10 - Propositions du public",
     "tags": ["propositions"]
 }, {
     "imageUrl": "cartes/Capture-Atelier-Colomiers.PNG",
-    "forumUrl": "https://framacarte.org/fr/map/carte-atelier-carto-colomiers-propositions-du-publ_6084",
+    "dynamicMapUrl": "https://framacarte.org/fr/map/carte-atelier-carto-colomiers-propositions-du-publ_6084",
     "title": "Atelier de Colomiers 10/11 - Propositions du public",
     "tags": ["propositions"]
 }, {
     "imageUrl": "cartes/Carte-dynamique-IdGeo.png",
-    "forumUrl": "http://idgeo.fr/cndp/geojson/carte_questions_generales.html",
+    "dynamicMapUrl": "http://idgeo.fr/cndp/geojson/carte_questions_generales.html",
     "title": "Restitution thématique des avis et questions reçus sur le site du débat",
     "tags": ["propositions"]
 }]
